@@ -33,15 +33,14 @@ let
         # $INO:DIGITAL-S-PULSE:PIN:VAL0:TIME:[VAL1]%
         # $INO:DIGITAL-C-PULSE:PIN:VAL0:TIME:[VAL1]%
         @time res = send_csvcmd(sp, "INO", "DIGITAL-S-PULSE", 
-            # CH1_LASER_PIN, 1, 800, 0,
+            # CH1_LASER_PIN, 1, 200, 0,
             # PUMP_3_PIN, 1, 2000, 0, # air in
-            # STIRREL_PIN, 1, 200, 0,
-            PUMP_2_PIN, 1, 50, 0, # in
-            PUMP_1_PIN, 1, 150, 0, # medium out
+            STIRREL_PIN, 1, 200, 0,
+            PUMP_2_PIN, 1, 650, 0, # in
+            PUMP_1_PIN, 1, 500, 0, # medium out
             ;
             log = false
         )
-        sleep(0.5)
     end
     nothing;
 end
