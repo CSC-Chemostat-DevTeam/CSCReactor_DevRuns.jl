@@ -193,7 +193,7 @@ function _meassure_OD(ch; v = true)
     send_csvcmd(sp, "INO", "ANALOG-WRITE", ch["laser.pin"], ch["laser.pwm"]; log = false);
     sleep(0.1)
 
-    global pkg1 = send_csvcmd(sp, "INO", "PULSE-IN", ch["led1.pin"], 100)
+    pkg1 = send_csvcmd(sp, "INO", "PULSE-IN", ch["led1.pin"], 100)
     # isempty(pkg1["done_ack"]) && continue
     val1 = parse(Int, pkg1["responses"][0]["data"][2])
 
